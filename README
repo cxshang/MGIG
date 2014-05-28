@@ -1,0 +1,20 @@
+MGIG is an efficient higher order feature selection algorithm for text classification.  
+The original codes are writen in "R" language and used with Rapidminer. 
+This repository aims to help users who want to implement their own code of MGIG algroithm.
+For details of MGIG algorithm, please see the following paper:
+Feature selection via maximizing global information gain for text classification
+
+Functions of files:
+
+getdata.R:  this file is used to construct corpus into a matrix and divide the whole documents into n folds.
+
+fs.R: selecte features from training set.
+
+transforms.R: this file is used to construct testing sets. I use Rapidminer to conduct experiments, 
+because rapidminer cannot  use string labels, transforms.R converts labels into number.
+
+please compile overallentropy.cc  and  rinterface.c using makefile, they will be called in fs.R.  
+Noting: overallentropy.cc uses the log function in fmath.hpp, which can be found at https://github.com/herumi/fmath
+You should download fmath.hpp and save it in the directory.
+
+The mgig algorithm is mainly implemented in fs.R file.  
